@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Site Properties -->
+    <title>Museum Recommendation</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/site.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/container.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/grid.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/image.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/menu.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/divider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/list.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/segment.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/dropdown.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/icon.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/semantic.min.css') }}">
+
+    <script src="{{ url_for('static', filename='dist/components/form.js') }}"></script>
+    <script src="{{ url_for('static', filename='dist/components/transition.js') }}"></script>
+
+    <style type="text/css">
+        body {
+        background-color: #FFFFFF;
+        }
+        .ui.menu .item img.logo {
+        margin-right: 1.5em;
+        }
+        .main.container {
+        margin-top: 7em;
+        }
+        .wireframe {
+        margin-top: 2em;
+        }
+        .ui.footer.segment {
+        margin: 5em 0em 0em;
+        padding: 1em 0em;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="ui blue fixed inverted menu">
+    <div class="ui container">
+        <a href="/" class="ui header item">
+            <!--<img class="logo" src="assets/images/logo.png">-->
+            Museum Type Recommendation
+        </a>
+        <a href="/" class="item">Home</a>
+    </div>
+</div>
+
+<div class="ui main text container">
+
+    <h1 class="ui header">Museum Type Recommendation</h1>
+
+    <form class="ui form" action="/recommend_museum" method="post">
+        <div class="field">
+            <label style="color:#2185D0">Traveler Type</label>
+            <select class="ui blue selection dropdown" name="traveler_type">
+                <option value=""></option>
+                <option value="Couple">Couple</option>
+                <option value="Family">Family</option>
+                <option value="Friends">Friends</option>
+                <option value="Solo">Solo</option>
+            </select>
+        </div>
+        <div class="field">
+            <label style="color:#2185D0">Preferences</label>        
+            <div class="ui checkbox" style="float:left; width:25%">
+                <input type="checkbox" name="special_exhibit">
+                <label>Special Exhibits</label>
+            </div>
+            <div class="ui checkbox" style="float:left; width:25%">
+                <input type="checkbox" name="permanent_collection">
+                <label>Permanent Collection</label> 
+            </div>
+            <div class="ui checkbox" style="float:left; width:25%">
+                <input type="checkbox" name="display">
+                <label>On Display</label> 
+            </div>
+            <div class="ui checkbox" style="float:left; width:25%">
+                <input type="checkbox" name="audio">
+                <label>Audio Guide</label> 
+            </div>            
+            <div class="ui checkbox" style="float:left; width:25%">
+                <input type="checkbox" name="interactive">
+                <label>Interactive</label> 
+            </div>
+            <div class="ui checkbox" style="float:left; width:25%">
+                <input type="checkbox" name="family">
+                <label>Family Friendly</label>
+            </div>
+            <div class="ui checkbox" style="float:left; width:25%">
+                <input type="checkbox" name="rainy">
+                <label>Rainy Day</label>
+            </div>
+            <div class="ui checkbox" style="float:left; width:25%">
+                <input type="checkbox" name="learn">
+                <label>Educational</label>
+            </div>
+            <div class="ui checkbox" style="float:right; width:25%">
+                <input type="checkbox" name="eye_opening">
+                <label>Eye Opening</label>
+            </div><div class="ui checkbox" style="float:right; width:25%">
+                <input type="checkbox" name="art">
+                <label>Works of Art</label>
+            </div>
+            <div class="ui checkbox" style="float:right; width:25%">
+                <input type="checkbox" name="natural_history">
+                <label>Stuffed Animals</label>
+            </div>
+            <div class="ui checkbox" style="float:right; width:25%">
+                <input type="checkbox" name="history">
+                <label>Historical Artifacts</label> 
+            </div>
+        </div>    
+        <div style="float:left;width:100%">
+        <br>
+        <button class="ui blue button" type="submit">Submit</button>
+        </div>
+    </form>
+
+</div>
+
+<div class="ui blue inverted vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">CEDB 1260 - BIG DATA ANALYTICS</a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
